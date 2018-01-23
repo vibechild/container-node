@@ -1,0 +1,8 @@
+---
+- hosts: staging
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Test
+      shell: hostname
+      
