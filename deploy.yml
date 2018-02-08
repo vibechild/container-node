@@ -9,8 +9,9 @@
         value: 0
         state: present
         sysctl_set: yes
+    - name: INSTALL Ceph Repository Info
+      yum: name="centos-release-ceph-luminous" state=installed
     - name: INSTALL Common Software
       yum: name={{item}} state=installed
       with_items:
-        - centos-release-ceph-luminous
         - ceph
