@@ -3,8 +3,14 @@
   become: true
   gather_facts: false
   tasks:
-    - sysctl:
+    - name: Set kernel parameters
+      sysctl:
         name: vm.swappiness
         value: 0
         state: present
         sysctl_set: yes
+    - name: INSTALL Common Software
+      yum: name={{item}} state=installed
+      with_items:
+        - centos-release-ceph-luminous
+        - ceph
