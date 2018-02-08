@@ -3,6 +3,8 @@
   become: true
   gather_facts: false
   tasks:
-    - name: Test
-      shell: hostname
-      
+    - sysctl:
+        name: vm.swappiness
+        value: 0
+        state: present
+        sysctl_set: yes
