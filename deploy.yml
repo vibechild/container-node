@@ -15,3 +15,14 @@
       yum: name={{item}} state=installed
       with_items:
         - ceph
+    - name: Remove swap from fstab
+      lineinfile:
+        dest: /etc/fstab
+        regexp: 'swap'
+        state: absent
+    - name: Make sure firewall service is not installed
+      yum: name=firewalld state=absent
+    - name: Enforce SELinux off
+      selinux:
+        policy: targeted
+        state: permissive
