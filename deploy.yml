@@ -26,3 +26,13 @@
       selinux:
         policy: targeted
         state: permissive
+
+    # Write sudoers file
+    - name: Write sudoers file
+      lineinfile:
+        dest: /etc/sudoers.d/devin
+        line: "devin ALL = (ALL) NOPASSWD:ALL"
+        create: yes
+
+
+# need to create user accounts that the sudoers file allows
