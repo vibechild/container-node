@@ -2,6 +2,9 @@
 - hosts: staging
   become: true
   gather_facts: false
+  handlers:
+    - name: swapoff
+      command: swapoff -a
   tasks:
     - name: Set kernel parameters
       sysctl:
@@ -20,6 +23,7 @@
         dest: /etc/fstab
         regexp: 'swap'
         state: absent
+      notify: swapoff
     - name: Make sure firewall service is not installed
       yum: name=firewalld state=absent
     - name: Enforce SELinux off
@@ -36,3 +40,4 @@
 
 
 # need to create user accounts that the sudoers file allows
+
