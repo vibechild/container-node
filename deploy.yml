@@ -38,6 +38,10 @@
         line: "devin ALL = (ALL) NOPASSWD:ALL"
         create: yes
 
+    - name: Setup Kernel Repo
+      yum: name="http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm" state=present
+    - name: Update to current kernel
+      yum: name="kernel-lt" state=present enablerepo=elrepo-kernel
 
 # need to create user accounts that the sudoers file allows
 
