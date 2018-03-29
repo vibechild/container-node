@@ -1,24 +1,24 @@
-# Container Cluster
+# Container Cluster Node Prep
 
-This is the configuration for the master servers in a kubernetes cluster
+This ansible script does all of the prep work to get a node ready for use in a kubernetes cluster
 
 ## Getting Started
 
-Clone the repository to your home directory and make changes there.  You can push changes from there using the ansible-playbook command, or commit and push you changes back to the git repository and the ansible runner will push changes to the server.
+Clone the repository to your home directory and make changes there.  You can push changes from there using the ansible-playbook command.
 
 
 ### Prerequisites
 
-To run this script you will need ansible-playbook available on your workstation or home server.  If you don't need to push changes from your working copy, you can just check changes into gitlab and the ansible-runner will push the changes.
+To run this script you will need ansible-playbook available on your workstation or home server. 
 
 To push changes, your ssh key must be on the cluster node server in the /root/.ssh/authorized_keys file.
 
 
 ## Deployment
 
-To deploy to live servers, verify that your ssh key is on the server, then check the host file to make sure it refers to the servers that you expect.
-
 Copy 'hosts.example' to 'hosts' and replace the hostnames
+
+To deploy to live servers, verify that your ssh key is on the server, then check the host file to make sure it refers to the servers that you expect.
 
 
 ```
