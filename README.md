@@ -6,10 +6,6 @@ This is the configuration for the master servers in a kubernetes cluster
 
 Clone the repository to your home directory and make changes there.  You can push changes from there using the ansible-playbook command, or commit and push you changes back to the git repository and the ansible runner will push changes to the server.
 
-```
-git clone https://version-control.service.vibechild.net/configuration/container-master.git
-cd container-master
-```
 
 ### Prerequisites
 
@@ -21,6 +17,9 @@ To push changes, your ssh key must be on the cluster node server in the /root/.s
 ## Deployment
 
 To deploy to live servers, verify that your ssh key is on the server, then check the host file to make sure it refers to the servers that you expect.
+
+Copy 'hosts.example' to 'hosts' and replace the hostnames
+
 
 ```
 ansible-playbook deploy.yml -i hosts --check
@@ -41,8 +40,8 @@ Request developer access to this repository and submit a merge request.
 
 ## Versioning
 
-There is currently only a master branch, because there are only production servers.
+There is currently only a master branch, because there are only one type of servers.
 
 ## Authors
 
-* **Devin** - *Initial work* - [Other Projects](https://version-control.service.vibechild.net/devin)
+* **Devin** - *Initial work* - [Private Repo](https://version-control.service.vibechild.net/devin) [Public Repo](https://github.com/vibechild)
