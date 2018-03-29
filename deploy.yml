@@ -1,5 +1,5 @@
 ---
-- hosts: staging
+- hosts: cluster
   become: true
   gather_facts: false
   handlers:
@@ -41,7 +41,9 @@
     - name: Setup Kernel Repo
       yum: name="http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm" state=present
     - name: Update to current kernel
-      yum: name="kernel-lt" state=present enablerepo=elrepo-kernel
+      yum: name="kernel-ml" state=present enablerepo=elrepo-kernel
+    - name: Update to current kernel tools
+      yum: name="kernel-ml-tools" state=present enablerepo=elrepo-kernel
 
 # need to create user accounts that the sudoers file allows
 

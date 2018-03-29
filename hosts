@@ -1,4 +1,0 @@
-[staging]
-containers[1:3].appserver.vibechild.net
-container-node[4:7].appserver.vibechild.net
-container-node10.appserver.vibechild.net

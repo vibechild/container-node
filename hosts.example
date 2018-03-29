@@ -1,0 +1,3 @@
+[cluster]
+container-master[1:3].example.net
+container-node[4:7].example.net
